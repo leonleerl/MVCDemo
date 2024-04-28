@@ -8,7 +8,9 @@ app.UseRouting();
 
 app.UseEndpoints(endpoint =>
 {
-    endpoint.MapDefaultControllerRoute();
+    endpoint.MapControllerRoute(
+        name: "default",
+        pattern: "{controller=Home}/{action=Create}/{id?}");
 });
 
 app.Run();
